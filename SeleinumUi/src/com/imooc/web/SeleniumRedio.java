@@ -54,6 +54,7 @@ public class SeleniumRedio {
             e.printStackTrace();
         }
         driver.close();
+        System.out.println();
     }
 
     public static void main(String[] args) {

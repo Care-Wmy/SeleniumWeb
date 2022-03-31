@@ -62,6 +62,8 @@ public class SeleniumAction {
 //        关闭浏览器
         driver.close();
 
+        System.out.println();
+
     }
 
 
