@@ -47,6 +47,8 @@ public class SeleniumRedio {
             }else {
                 sex.click();
             }
+
+
         }
         try {
             Thread.sleep(3000);
