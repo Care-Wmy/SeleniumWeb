@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.List;
 
 public class SeleniumRedio {
-//    redio相关操作
+
         WebDriver driver;
     public void InitDriver(){
         System.setProperty("webdriver.chrome.driver","D:\\Study\\chromdriver\\chromedriver.exe");
@@ -22,7 +22,7 @@ public class SeleniumRedio {
 //        打开个人中心页
         driver.get("https://www.imooc.com/user/setprofile");
     }
-
+    //    redio相关操作
     public void Redio(){
 //        打开个人中心页
         //driver.get("https://www.imooc.com/user/setprofile");
