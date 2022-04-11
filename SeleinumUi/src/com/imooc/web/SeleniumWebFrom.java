@@ -78,11 +78,26 @@ public class SeleniumWebFrom {
         WebElement JobList = UserForm.findElement(By.id("job"));
 //     运用select方法操作下拉框
       Select DowenList = new Select(JobList);
-      DowenList.selectByIndex(8);
+//      DowenList.selectByIndex(8);
+//        运用selectByValue定位下拉框里的值
+      DowenList.selectByValue("8");
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
+        }
+//        运用selectByVisibleText定位下拉框里的值
+        DowenList.selectByVisibleText("交互设计师");
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+//        开头为de的方法支持多选
+//        DowenList.deselectByVisibleText("交互设计师");
+        List<WebElement> SelectOption = DowenList.getAllSelectedOptions();
+        for (WebElement option:SelectOption){
+            System.out.println(option.getText());
         }
         driver.close();
     }
