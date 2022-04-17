@@ -7,8 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
-import javax.swing.*;
 import java.util.List;
+import java.util.Set;
 
 //鼠标相关操作
 public class SeleniumActions {
@@ -48,7 +48,7 @@ public class SeleniumActions {
 //        鼠标悬停
         actions.moveToElement(Mobile).perform();
         try {
-            Thread.sleep(1000);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -59,13 +59,40 @@ public class SeleniumActions {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        driver.close();
+//        driver.close();
 
+    }
+
+    //  多窗口切换
+    public void WinHandle(){
+        //        拿到当前所有窗口
+        Set<String> Handels = driver.getWindowHandles();
+//        拿到当前的页面
+        String Cur = driver.getWindowHandle();
+//        循环页面
+        for (String s:Handels){
+//            判断循环到的页面是不是当前页面
+            if(s.equals(Cur)){
+//                不是，继续循环
+                continue;
+            }else {
+//                是当前页面就停止
+                driver.switchTo().window(s);
+            }
+        }
+        driver.findElement(By.className("ellipsis2")).click();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        driver.close();
     }
 
     public static void main(String[] args) {
           SeleniumActions seleniumActions =  new SeleniumActions();
           seleniumActions.InitDriver();
           seleniumActions.Actions();
+          seleniumActions.WinHandle();
     }
 }
