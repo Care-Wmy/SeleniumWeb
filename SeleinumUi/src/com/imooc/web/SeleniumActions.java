@@ -88,6 +88,29 @@ public class SeleniumActions {
         }
         driver.close();
     }
+    public void AlertWIin(){
+        driver.get("地址");
+//        只有确认类型弹窗
+//        点击弹出弹窗
+        driver.findElement(By.id("")).click();
+//        处理弹窗
+        driver.switchTo().alert();
+
+//        有确认取消类型弹窗
+//        取消弹窗dismiss
+        driver.switchTo().alert().dismiss();
+//        确认accept
+        driver.switchTo().alert().accept();
+
+//        有需要输入信息弹窗处理
+//        输入信息
+        driver.switchTo().alert().sendKeys("123456");
+//        点击确认
+        driver.switchTo().alert().accept();
+
+//        页面刷新使用方法
+        driver.navigate().refresh();
+    }
 
     public static void main(String[] args) {
           SeleniumActions seleniumActions =  new SeleniumActions();
