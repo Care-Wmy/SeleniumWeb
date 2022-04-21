@@ -42,7 +42,7 @@ public class AppTest {
                 System.out.println("用户信息不匹配" + UserName);
             }
         } catch (Exception e){
-            System.out.println("登录失败");
+            System.out.println("测试文件");
         }
 
         driver.close();
