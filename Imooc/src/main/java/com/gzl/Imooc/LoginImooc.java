@@ -1,3 +1,6 @@
+package com.gzl.Imooc;
+
+import com.gzl.Imooc.AppTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -88,7 +91,7 @@ public class LoginImooc {
     }
 
     public static void main(String[] args) {
-        AppTest  appte =  new AppTest();
+        AppTest appte =  new AppTest();
         appte.InitDriver();
         appte.UserLogin();
     }
