@@ -37,6 +37,10 @@ public class ProUtil {
        }
     }
 
+    public int  GetLines(){
+        return Pro.size();
+    }
+
     public static void main(String[] args) {
         ProUtil proUtil = new ProUtil("D:\\Study\\JavaUi\\SeleniumWeb\\Imooc\\element.properties");
         System.out.println(proUtil.GetPorperties("username"));
